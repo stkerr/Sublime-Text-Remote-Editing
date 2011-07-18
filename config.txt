@@ -1,0 +1,12 @@
+username=me
+password=password
+host=1.2.3.4
+port=22
+
+
+
+#
+# The plugin reads the first 4 lines of this file for the username, password,
+# host, and port number. Port number default is 22, but the other three fields
+# need to be set properly
+# 

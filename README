@@ -1,0 +1,47 @@
+This plugin allows Sublime Text 2 to open and save remote files.
+
+INSTALLATION & CONFIGURATION
+============================
+This plugin relies on the pscp application being on the system path.
+It can be downloaded from: http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html
+The plugin WILL NOT WORK if this is not installed and on the system path. 
+
+To test if pscp is on the system path, open a command prompt and type 'pscp'. If you
+see a bunch of text scroll by, the application is properly installed. If you get an
+error message about the command not being recognized, then pscp is not on the system path.
+You can change the system path or copy pscp to the folder \Windows\System32.
+
+Before this plugin can be used, it is also necessary to configure the plugin
+to work with the relevant server.
+
+This is done by editing the 4 fields in the config.txt file.
+Change the username, password, and host field as necessary. You
+should be able to leave the port value as 22, unless the server
+listens for SSH connection on an alternate port. If you don't know
+what that means, leave it as 22.
+
+Anytime you wish to use a different server, you must change these settings, since this
+is how Sublime Text 2 will connect to the server.
+
+USAGE
+=====
+The plugin provides two commands, an open and a save command. There is a keymap
+file that will allow these commands to be executed with 'ctrl+shift+alt+s' and 
+'ctrl+shift+alt+o' for saving and opening, respectively.
+
+The first step to using this functionality is to open a file. When you execute the
+command for remote open, you will be prompted for a filepath on the server you configured,
+such as /home/me/myfile.txt. Sublime Text 2 will then open this file in a new buffer.
+
+When you are done editing, make the remote file the active buffer, 
+save the file normally and then execute the remote save
+command. Note that if you do not use both save and remote save (in that order) your
+changes will not be uploaded to the remote server properly.
+
+NOTES
+=====
+There is a folder called 'temp' in the plugin directory. This is where the plugin
+temporarily stores files that are being remotely accessed. This allows the plugin to work quickly.
+Whenever you change servers, delete every file in this directory. Then, create an empty text file
+named path.txt. You MUST recreate path.txt, as this helps the plugin keep track of what remote files
+are open and where to put them.

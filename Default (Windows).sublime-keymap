@@ -1,0 +1,4 @@
+[
+	{ "keys": ["ctrl+shift+alt+o"], "command": "remote", "args" : {"mode":"open", "host":"filepath","file":"None"}},
+	{ "keys": ["ctrl+shift+alt+s"], "command": "remote", "args" : {"mode":"save", "host":"username","file":"None"}}	
+]
